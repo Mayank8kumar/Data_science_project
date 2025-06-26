@@ -1,5 +1,6 @@
 # Byte-compiled / cache
 __pycache__/
+__pycache__
 *.py[cod]
 
 # Logs
@@ -14,9 +15,13 @@ env/
 .vscode/
 *.swp
 
-# Jupyter
+# # Jupyter
 .ipynb_checkpoints/
 
 # System files
 .DS_Store
 Thumbs.db
+
+
+# File
+notebook

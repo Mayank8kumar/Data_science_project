@@ -1,6 +1,6 @@
 import os
 import sys
-from src.Data_science.exceptions import CustomerException
+from src.Data_science.exceptions import CustomException
 from src.Data_science.logger import logging
 import pandas as pd 
 from src.Data_science.utils import read_sql_data
@@ -23,7 +23,8 @@ class DataIngestion:
 
     def initiate_data_ingestion(self):
         try:
-            df=read_sql_data()
+            # df=read_sql_data()
+            df=pd.read_csv(os.path.join('artifacts','raw.csv'))   ## Not reading it again from the database. 
             logging.info("Reading from mysql database")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
@@ -33,7 +34,10 @@ class DataIngestion:
             train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
-            logging.info("Data Ingestion is completed")
+            # logging.info("Data Ingestion is completed part I")
+            # print("**************************************************************")
+            # print(df.head())
+            # print("**************************************************************")
 
             return(
                 self.ingestion_config.train_data_path,
@@ -41,4 +45,4 @@ class DataIngestion:
             )
 
         except Exception as e:
-            raise CustomerException(e,sys)
+            raise CustomException(e,sys)
