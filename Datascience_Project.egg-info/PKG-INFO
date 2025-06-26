@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: Datascience-Project
+Version: 0.0.1
+Author: Mayank
+Author-email: mayankkumar08132@gmail.com
+Requires-Dist: numpy==2.3.1
+Requires-Dist: pandas==2.3.0
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: pytz==2025.2
+Requires-Dist: setuptools==80.9.0
+Requires-Dist: six==1.17.0
+Requires-Dist: tzdata==2025.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
