@@ -98,18 +98,18 @@ class ModelTrainer:
                 ]
                 best_model = models[best_model_name]
 
-                print("This is the best model:")
-                print(best_model_name)
+                # print("This is the best model:")
+                # print(best_model_name)
 
-                model_names = list(params.keys())
+                # model_names = list(params.keys())
 
-                actual_model=""
+                # actual_model=""
 
-                for model in model_names:
-                    if best_model_name == model:
-                        actual_model = actual_model + model
+                # for model in model_names:
+                #     if best_model_name == model:
+                #         actual_model = actual_model + model
 
-                best_params = params[actual_model]
+                # best_params = params[actual_model]
 
 
                 if best_model_score<0.6:
