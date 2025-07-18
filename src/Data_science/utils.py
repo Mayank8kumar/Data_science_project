@@ -28,7 +28,7 @@ def read_sql_data():
             password=password,
             db=db
         )
-        logging.info("Connection Established", mydb)
+        logging.info(f"Connection Established {mydb}")
         df=pd.read_sql_query('Select * from students',mydb)
         print(df.head())
 
@@ -55,6 +55,10 @@ def save_object(file_path, obj):
 def evaluate_models(X_train, y_train,X_test,y_test,models,param):
     try:
         report = {}
+
+        print("Model keys:", list(models.keys()))
+        print("Param keys:", list(param.keys()))
+
 
         for i in range(len(list(models))):
             model = list(models.values())[i]

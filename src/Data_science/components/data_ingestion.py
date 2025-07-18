@@ -23,8 +23,8 @@ class DataIngestion:
 
     def initiate_data_ingestion(self):
         try:
-            # df=read_sql_data()
-            df=pd.read_csv(os.path.join('artifacts','raw.csv'))   ## Not reading it again from the database. 
+            df=read_sql_data()
+            # df=pd.read_csv(os.path.join('artifacts','raw.csv'))   ## Not reading it again from the database. 
             logging.info("Reading from mysql database")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
